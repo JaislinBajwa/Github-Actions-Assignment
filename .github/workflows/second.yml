@@ -1,9 +1,11 @@
 name: workflow2
 
 on:
-   push:
-     branches: [ "main" ]
+  #  push:
+  #    branches: [ "main" ]
 
+  workflow_dispatch:
+  
 jobs:
   jobnew:
     runs-on: ubuntu-latest
@@ -13,4 +15,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, batch 8
+        run: echo Hello, batch 8 from vs code
