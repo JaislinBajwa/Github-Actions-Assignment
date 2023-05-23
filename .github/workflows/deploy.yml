@@ -21,10 +21,14 @@ jobs:
              aws-access-key-id: ${{secrets.AWS_ACCESS_KEY}}
              aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
              aws-region: ${{env.AWS_REGION}}
+
+          - name: To print the env values
+            run: echo "Frist job is running"
     Print_ENV:
         runs-on: ubuntu-latest
+        needs: ['Docker_build_and_push']
         steps:
-          -name: Tom pringt the env values
-           run: echo ${{github.run_number}}
+          - name: Tom pringt the env values
+            run: echo ${{env.GITHUB_SESSION}}
             
             
